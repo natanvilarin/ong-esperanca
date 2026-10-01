@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - ONG Esperança</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container header-container">
+        <div class="logo-area">
+            <a href="index.html" class="logo">
+                <img src="imagens/logo-ong.png" alt="Logo da ONG Esperança">
+            </a>
+            
+        </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu">☰</label>
+
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li class="dropdown">
+                    <a href="projetos.html">Projetos</a>
+                    <ul class="submenu">
+                        <li><a href="projetos.html#campanhas">Campanhas</a></li>
+                        <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+                    </ul>
+                </li>
+                <li><a href="cadastro.html">Seja Voluntário</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="app">
+    <div class="container">
+        <section class="section-card col-12">
+            <h2>Cadastre-se</h2>
+
+            <p>
+                Preencha seus dados para demonstrar interesse em participar
+                das ações da ONG.
+            </p>
+<form action="#" method="post">
+
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required
+                           aria-describedby="email-help">
+                    <p class="help-text" id="email-help">
+                        Informe um endereço de e-mail válido.
+                    </p>
+
+                    <label for="nascimento">Data de nascimento:</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf"
+                           pattern="[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}-?[0-9]{2}"
+                           placeholder="000.000.000-00"
+                           required>
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" maxlength="15" name="telefone"
+                           pattern="\(?[0-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}"
+                           placeholder="(11) 99999-9999"
+                           required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço</legend>
+
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep"
+                           pattern="[0-9]{5}-?[0-9]{3}"
+                           placeholder="00000-000"
+                           required>
+
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required>
+
+                    <label for="numero">Número:</label>
+                    <input type="number" id="numero" name="numero" min="1" required>
+
+                    <label for="complemento">Complemento:</label>
+                    <input type="text" id="complemento" name="complemento">
+
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado" required>
+                        <option value="">Selecione</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PR">Paraná</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Participação</legend>
+
+                    <label for="interesse">Área de interesse:</label>
+                    <select id="interesse" name="interesse" required>
+                        <option value="">Selecione</option>
+                        <option value="eventos">Eventos</option>
+                        <option value="doacoes">Campanhas de doação</option>
+                        <option value="social">Ações sociais</option>
+                    </select>
+
+                    <label for="disponibilidade">Disponibilidade:</label>
+                    <input type="text" id="disponibilidade"
+                           name="disponibilidade" required>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit">Enviar cadastro</button>
+                    
+                </div>
+            </form>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-container">
+        <p>&copy; 2026 ONG Esperança. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

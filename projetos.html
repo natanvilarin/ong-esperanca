@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - ONG Esperança</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container header-container">
+        <div class="logo-area">
+            <a href="index.html" class="logo">
+                <img src="imagens/logo-ong.png" alt="Logo da ONG Esperança">
+            </a>
+            
+        </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu">☰</label>
+
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li class="dropdown">
+                    <a href="projetos.html">Projetos</a>
+                    <ul class="submenu">
+                        <li><a href="#campanhas">Campanhas</a></li>
+                        <li><a href="#voluntariado">Voluntariado</a></li>
+                    </ul>
+                </li>
+                <li><a href="cadastro.html">Seja Voluntário</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="app">
+    <div class="container">
+        <section class="section-card col-12">
+            <h2>Nossos Projetos</h2>
+
+            <img src="imagens/projeto-social.jpg"
+                 alt="Voluntários da ONG Esperança distribuindo pacotes de doces para crianças carentes em uma ação de dia das crianças">
+
+            <p>
+                Conheça nossas principais iniciativas e descubra como
+                contribuir com as ações da ONG.
+            </p>
+        </section>
+
+        <section class="section-card col-12" id="campanhas">
+            <h2>Campanhas de Doação</h2>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="badges">
+                        <span class="badge badge-primary">Alimentação</span>
+                        <span class="badge badge-success">Ativo</span>
+                    </div>
+
+                    <h3>Campanha de Alimentos</h3>
+
+                    <p>
+                        Arrecadamos alimentos para apoiar famílias em situação
+                        de vulnerabilidade social.
+                    </p>
+
+                    <div class="card-actions">
+                        <span class="badge badge-warning">Doação</span>
+                        <a href="cadastro.html" class="button">Participar</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="badges">
+                        <span class="badge badge-primary">Apoio social</span>
+                        <span class="badge badge-success">Ativo</span>
+                    </div>
+
+                    <h3>Campanha de Roupas</h3>
+
+                    <p>
+                        Recebemos roupas em boas condições para distribuição
+                        às pessoas atendidas pela organização.
+                    </p>
+
+                    <div class="card-actions">
+                        <span class="badge badge-warning">Doação</span>
+                        <a href="cadastro.html" class="button">Participar</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-card col-12" id="voluntariado">
+            <h2>Voluntariado</h2>
+
+            <img src="imagens/voluntariado.jpg"
+                 alt="Voluntários da ONG Esperança sorrindo e cumprimentando novos possíveis voluntários da ONG">
+
+            <article class="card">
+                <h3>Como Participar</h3>
+                <p>
+                    Os voluntários podem colaborar em campanhas, eventos
+                    e atividades de apoio realizadas pela ONG.
+                </p>
+
+                <div class="form-actions">
+                    <a href="cadastro.html" class="button button-secondary">
+                        Quero ser voluntário
+                    </a>
+                </div>
+            </article>
+
+            <p>
+                Para participar, acesse a página
+                <a href="cadastro.html">de cadastro de voluntários</a>.
+            </p>
+        </section>
+
+        
+    </div>
+</main>
+
+<!-- MODAL CONTROLADO POR CHECKBOX -->
+<input type="checkbox" id="modal-toggle" class="modal-toggle">
+
+<div class="modal-overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <h2 id="modal-title">Confirmar participação</h2>
+
+        <p>
+            Deseja participar deste projeto como voluntário?
+        </p>
+
+        <div class="modal-actions">
+            <label for="modal-toggle" class="button button-secondary">
+                Cancelar
+            </label>
+
+            <a href="cadastro.html" class="button">
+                Confirmar
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST PARA DEMONSTRAÇÃO VISUAL -->
+<div class="toast" role="status" aria-live="polite">
+
+</div>
+
+<footer>
+    <div class="container footer-container">
+        <p>&copy; 2026 ONG Esperança. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
