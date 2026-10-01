@@ -1,4 +1,5 @@
 import { salvar, recuperar } from "./storage.js";
+import { sucesso, erro } from "./alertas.js";
 
 function telefoneValido(valor) {
     const numeros = valor.replace(/\D/g, "");
@@ -28,14 +29,32 @@ export function iniciarFormulario() {
     if (dados) {
         Object.keys(dados).forEach(chave => {
             const campo = form.elements[chave];
-            if (campo) campo.value = dados[chave];
+
+            if (campo) {
+                campo.value = dados[chave];
+            }
         });
     }
 
     const telefone = form.elements.telefone;
+    const email = form.elements.email;
+    const emailHelp = document.getElementById("email-help");
 
     telefone?.addEventListener("input", event => {
         event.target.value = aplicarMascaraTelefone(event.target.value);
+    });
+
+    email?.addEventListener("input", () => {
+        if (email.value === "") {
+            emailHelp.textContent = "Exemplo: nome@exemplo.com";
+            return;
+        }
+
+        if (email.validity.valid) {
+            emailHelp.textContent = "E-mail válido.";
+        } else {
+            emailHelp.textContent = "Informe um endereço de e-mail válido.";
+        }
     });
 
     form.addEventListener("submit", function(event) {
@@ -45,21 +64,20 @@ export function iniciarFormulario() {
 
         if (telefone && !telefoneValido(telefone.value)) {
             telefone.focus();
-            alert("Informe um telefone válido com DDD.");
+
+            erro(
+                "Telefone inválido",
+                "Informe um telefone válido com DDD."
+            );
+
             return;
         }
 
         salvar(dadosFormulario);
 
-        if (window.Swal) {
-            Swal.fire({
-                title: "Cadastro enviado!",
-                text: "Seus dados foram armazenados com sucesso.",
-                icon: "success",
-                confirmButtonText: "OK"
-            });
-        } else {
-            alert("Cadastro enviado com sucesso!");
-        }
+        sucesso(
+            "Cadastro enviado!",
+            "Seus dados foram armazenados com sucesso."
+        );
     });
 }
