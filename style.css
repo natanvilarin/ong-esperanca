@@ -347,7 +347,7 @@ button:disabled {
 }
 
 .badge-primary {
-    background-color: var(--cor-primaria-clara);
+    background-color: var(--cor-primaria-escura);
     color: var(--cor-fundo);
 }
 
