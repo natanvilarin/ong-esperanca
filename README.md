@@ -19,6 +19,10 @@ O ONG Esperança é um projeto web desenvolvido na disciplina de Desenvolvimento
 * `imagens/`: diretório de imagens utilizadas no site.
 * `js/`: diretório de scripts JavaScript, caso exista na estrutura atual.
 
+## Acessibilidade
+
+O projeto utiliza recursos de acessibilidade, incluindo HTML semântico, textos alternativos em imagens, navegação por teclado, indicador de foco e link para acesso direto ao conteúdo principal. O formulário também utiliza recursos nativos de validação do HTML5.
+
 ## Execução
 
 Abra a página inicial do projeto no navegador ou utilize uma extensão de servidor local, como o Live Server, no Visual Studio Code.
