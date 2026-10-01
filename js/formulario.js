@@ -45,17 +45,17 @@ export function iniciarFormulario() {
     });
 
     email?.addEventListener("input", () => {
-        if (email.value === "") {
-            emailHelp.textContent = "Exemplo: nome@exemplo.com";
-            return;
-        }
+    if (email.value === "") {
+        emailHelp.textContent = "";
+        return;
+    }
 
-        if (email.validity.valid) {
-            emailHelp.textContent = "E-mail válido.";
-        } else {
-            emailHelp.textContent = "Informe um endereço de e-mail válido.";
-        }
-    });
+    if (email.validity.valid) {
+        emailHelp.textContent = "";
+    } else {
+        emailHelp.textContent = "Informe um endereço de e-mail válido.";
+    }
+});
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
